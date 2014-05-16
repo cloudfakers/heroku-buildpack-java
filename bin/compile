@@ -13,8 +13,6 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
-echo "ENVDIR: ${ENV_DIR}"
-
 LOGGER_FLAGS=""
 
 curl --silent --location http://heroku-jvm-common.s3.amazonaws.com/jvm-buildpack-common.tar.gz | tar xz
@@ -22,6 +20,11 @@ curl --silent --location http://heroku-jvm-common.s3.amazonaws.com/jvm-buildpack
 . bin/java
 
 export_env_dir $ENV_DIR
+
+echo -n "-----> Generating procname ${PROCNAME}..."
+#echo -n "${PROCNAME}" > $BUILDIR/.procname
+export PROCNAME=${PROCNAME}
+echo " done"
 
 KEEP_M2_CACHE="true"
 

@@ -2,6 +2,7 @@
 # bin/release <build-dir>
 
 BUILD_DIR=$1
+#PROCNAME=`cat ${BUILD_DIR}/.procname`
 
 cat <<EOF
 ---
