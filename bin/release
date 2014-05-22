@@ -2,7 +2,6 @@
 # bin/release <build-dir>
 
 BUILD_DIR=$1
-#PROCNAME=`cat ${BUILD_DIR}/.procname`
 
 cat <<EOF
 ---
@@ -13,5 +12,5 @@ config_vars:
 addons:
   heroku-postgresql:hobby-dev
 default_process_types:
-  $PROCNAME: sh $PROCNAME/target/bin/$PROCNAME
+  web: sh web/target/bin/web
 EOF
