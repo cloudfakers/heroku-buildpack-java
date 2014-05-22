@@ -12,5 +12,5 @@ config_vars:
 addons:
   heroku-postgresql:hobby-dev
 default_process_types:
-  web: sh web/target/bin/web
+  twitter: sh twitter/target/bin/twitter
 EOF
